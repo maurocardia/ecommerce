@@ -43,7 +43,7 @@ let circulo = document.querySelector("#circulo")
 
 document.addEventListener("DOMContentLoaded",() =>{ 
   visualizarProducto()
-  cargue()
+  
   
 })
 
@@ -168,16 +168,13 @@ function mostrarProductoscompras (){
   
   contenedorcompras.innerHTML = fragmentoHTML
   circulo.textContent=cantprod
-  localStorage.setItem("productosl", JSON.stringify(compras));
+
 
  
 }
 
 
-function cargue(){
   
-    compras = JSON.parse(localStorage.getItem("productosl"))
-  }
 
 
 
