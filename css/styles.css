@@ -56,7 +56,7 @@ nav{
 
 }
 .logonav{
-    width: 8rem;
+    width: 10rem;
     display: flex;
     align-items: center;
  }
@@ -77,6 +77,7 @@ nav{
     gap: 1rem;
 }
 
+
 .moon{
     height: 50%;
 
@@ -85,7 +86,7 @@ nav{
   height: 35%;  
 }
 .menu{
-    height: 35%;
+    height: 40%;
     padding-top: 3px;
 
 }
@@ -183,7 +184,7 @@ section > button{
     grid-template-rows: 50% 50%;
     gap: 1rem;
     height: 10rem;
-    width: 100%;
+    width: 99%;
    
 }   
 
@@ -209,10 +210,14 @@ section > button{
     padding-top: 2rem;
     display: flex;
     align-items: center;
-    text-align: center;
+   
     flex-direction: column;
     gap: 2rem;
     max-width: 310px;
+    width: 100vw;
+    position: relative;
+    left: calc(25vw);
+   
    
    
 }
@@ -224,7 +229,7 @@ section > button{
     background-color: var(--card-color);
     flex-direction: column;
     border-radius: 0.4rem;
-    
+  
   
 
 }
@@ -248,6 +253,8 @@ section > button{
 .productcard{
     height: 10rem;
     object-fit: contain;
+    position: relative;
+    
    
 }
 
@@ -274,15 +281,17 @@ section > button{
     
 }
 
-.ourinformation > h3{
-    color:black;
+.information{
+    padding-top: 2rem;
 }
+
+
 
 .containerredes{
     display: flex;
     background-color: var(--container-color);
-    gap: 0.5rem;
-    padding-left: 0.5rem;
+    gap: 1rem;
+    
    
 
     justify-content:initial;
@@ -291,8 +300,8 @@ section > button{
 }
 .containerredes > img{
     margin-top:1rem;
-    height: 5%;
-    width: 5%;
+    height: 2%;
+    width: 2%;
     
 }
 .uno{
@@ -321,6 +330,7 @@ section > button{
     gap: 2rem;
     padding: 2rem 0;
     text-align: end;
+    z-index: 1;
 }
 .navm > li{
     padding-top: 3rem;
@@ -353,36 +363,37 @@ section > button{
 }
 
 .activeshopping{
-    height: 100%;
+    height: 100vh;
     width: 100%;
-    position: absolute;
+    position: relative;
     background-color: #fff;
     align-items: center;
     padding-top: 2rem;
     display: flex;
     flex-direction: column;
+    text-align: center;
+    z-index: 1;
     
 }   
 
-.compras-list > .closeshop{
+.shoppingcontainer > .closeshop{
     width: 15px;
     margin-right: 1rem;
     position: relative;
-    left:calc(100%);
+    margin-bottom: 2rem;
+    left: 40%;
+
 }
 
 .compras-list > .titlecardshop{
     text-align: center;
     padding-top: 1rem;
 }
-
-.compras-list > .product{
-    position: relative;
-    height: 200px;
-    margin-top: 50px;
-
+.compras-list{
+    display: flex;
+  align-items: center;
     
-
+ flex-direction: column;
 }
 
 .footercart{
@@ -393,6 +404,62 @@ height:100%;
 width: 85%;
 padding-bottom: 1rem;
 }
+
+ .item > img{
+ width: 70px;
+ height: 70px;
+
+ }
+.cardshop{
+    width: 8rem ;
+    height: 8rem;
+    background-color: var(--container-color);
+    border-top-left-radius: 0.8rem;
+margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 0.5rem;
+
+   
+    
+}
+.containerprice{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.totals{
+    margin-top: 2rem;
+    background-color: rgb(201, 199, 199); 
+    text-align: center;
+    width: 100vw    ;
+
+
+    
+}
+
+#circulo{
+    background-color: black;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    right: 34px;
+    top: 32px;;
+    color: #fff;
+    font-size: 10px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    z-index: 0;
+}
+
+
+
+
+
+
 
 
 

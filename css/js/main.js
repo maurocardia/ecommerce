@@ -35,11 +35,18 @@ let closeshop = document.querySelector('.closeshop')
 let listProducts = document.querySelector(".portafolioproduts")     
 let compras = []
 let contenedorcompras = document.querySelector(".compras-list")
+let cerrarlistshopp = document.querySelector(".cerrarshop")
+let itemshopp = document.querySelector(".item")
+let circulo = document.querySelector("#circulo")
+
 
 
 document.addEventListener("DOMContentLoaded",() =>{ 
   visualizarProducto()
+  cargue()
+  
 })
+
 
 
 containermenu.addEventListener("click",() => {
@@ -56,7 +63,14 @@ cart.addEventListener("click",()=>{
     
 closeshop.addEventListener("click",()=>{
       containershop.classList.toggle('activeshopping')
+
   })
+
+  cerrarlistshopp.addEventListener( "click", () =>{
+    itemshopp.classList.remove(".item")
+})
+
+
 
 
 function visualizarProducto(){
@@ -69,11 +83,11 @@ function visualizarProducto(){
       <img src=${producto.image} class="productcard">
       <div id="details">
           <p class="price">${producto.price }</p>
-          <p class="stock">${producto.quantity}: 10</p>
+          <p class="stock">${producto.quantity}</p>
           <p class= "type">${producto.name}</p>
 
       </div>
-      <button data-id="${producto.id}" class="add addhoodies">+</button>
+      <button data-id="${producto.id}" class="add">+</button>
 
     </div>`
 
@@ -98,15 +112,18 @@ function visualizarProducto(){
 }
 
 
-
-
-
-//function contarArticulos(){//
-
 function agregarArticulos(producto){
-  let buscararticulo = compras.find(item => item.ide === producto.id)
+  let buscararticulo = compras.find(item => item.id === producto.id)
+
   if(buscararticulo){
+    let stock = compras[buscararticulo.index].quantity
+    let nCantidades = compras[buscararticulo.index].nCantidades
+
+    if(stock > nCantidades){
     compras[buscararticulo.index].nCantidades += 1
+  }else{
+    alert( "No hay suuficiente inventario")
+  }
 
   }else{
     producto.nCantidades = 1
@@ -117,22 +134,50 @@ console.log(compras)
 mostrarProductoscompras()
 }
 
-
 function mostrarProductoscompras (){
   let fragmentoHTML =``
+  let  suma =0
+  let cantprod = 0
 
   compras.forEach( item =>{
     fragmentoHTML+=
     `
-    <div class="item">
-     <img src=${item.image} alt="">
-     <p>${item.name}</p>
-     <small>${item.nCantidades}</small>
+    <div class="cardshop">
+        <div class="item">
+        <img src=${item.image} alt="" class="imagesproductos">
+        <p>${item.name}</p>
+        <div class="containerprice">
+          <small class="textproducshop">#${item.nCantidades}</small> 
+          <small class="priceshopp">$${item.price}</small> 
+        </div>
+      </div>
+    
     </div>
     `
+
+    let total= item.nCantidades*item.price
+    suma += total 
+    cantprod += item.nCantidades
   })
+  fragmentoHTML += `
+  
+  <div class=totals>
+  <p>Productos: ${cantprod}</p>
+    <p>TOTAL: $${suma}</p>
+  </div>`
+  
   contenedorcompras.innerHTML = fragmentoHTML
+  circulo.textContent=cantprod
+  localStorage.setItem("productosl", JSON.stringify(compras));
+
+ 
 }
+
+
+function cargue(){
+  
+    compras = JSON.parse(localStorage.getItem("productosl"))
+  }
 
 
 
