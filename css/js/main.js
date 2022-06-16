@@ -39,7 +39,7 @@ let cerrarlistshopp = document.querySelector(".cerrarshop")
 let itemshopp = document.querySelector(".item")
 let circulo = document.querySelector("#circulo")
 
-
+cargue()
 
 document.addEventListener("DOMContentLoaded",() =>{ 
   visualizarProducto()
@@ -168,14 +168,16 @@ function mostrarProductoscompras (){
   
   contenedorcompras.innerHTML = fragmentoHTML
   circulo.textContent=cantprod
-
-
+  localStorage.setItem("productosl", JSON.stringify(compras));
  
 }
 
 
-  
-
+function cargue(){
+  if(compras == false){
+    compras = JSON.parse(localStorage.getItem("productosl"))
+  }
+}
 
 
 
