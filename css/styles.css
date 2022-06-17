@@ -156,6 +156,11 @@ header{
     padding-left: 1rem;
     display: flex;
     align-items: center ;
+    
+}
+#addToCart{
+    height: 3rem;
+    width: 10rem;
 }
 
 section > button{
@@ -169,7 +174,7 @@ section > button{
 }
 
 #discover{
-    width: 30%;
+    width: 50%;
     height: 2rem;
     background-color: var(--text-color-light);
     display: flex;
@@ -276,6 +281,7 @@ section > button{
     display: flex;
     justify-content: center;
     align-items: center ;
+    border-color: rgb(180, 175, 175);
 }
 
 
@@ -372,13 +378,15 @@ section > button{
     height: 100vh;
     width: 100vw;
     position: relative;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.797);
     align-items: center;
     padding-top: 2rem;
     display: flex;
     flex-direction: column;
     text-align: center;
     z-index: 1;
+    bottom: 2390px;
+    z-index: 10;
     
 }   
 
@@ -432,7 +440,7 @@ padding-top: 2rem;
     height: 8rem;
     background-color: var(--container-color);
     border-top-left-radius: 0.8rem;
-margin-top: 2rem;
+     margin-top: 4rem;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -472,10 +480,18 @@ margin-top: 2rem;
     z-index: 0;
 }
 
+.add:hover {
+  background-color: rgb(245, 177, 177);
+  box-shadow: 0 4px 16px rgb(255, 1, 1);
+  transition: all 0.2s ease;
+  color:blueviolet
+  
+}
+
 @media screen and (min-width: 768px) {
 
     nav{
-        height: 8rem;
+        height: 6rem;
     }
     .logonav > img {
         width: 8rem;
@@ -489,8 +505,8 @@ margin-top: 2rem;
     #circulo{
         height: 2rem;
         width: 2rem;
-        top: 67px;
-        right: 58px;
+        top: 50px;
+        right: 40px;
         font-size: 18px;
         }
 
@@ -520,12 +536,14 @@ margin-top: 2rem;
 
     #discover{
         height: 3rem;
+        width: 12rem;
         font-size: 23px;
     }
 
     #addToCart{
         height: 4rem;
         font-size: 23px;
+        width: 15rem;
     }
     .containerMenu-filtro > div{
         font-size: 24px;
@@ -559,10 +577,75 @@ margin-top: 2rem;
         width: 1.5rem;
         height: 1.5rem;
     }
+    .shoppingcontainer{
+        position: relative;
+        bottom: 2855px;
+    }
+    .totals{
+        width: 10rem;
+        height: 4rem;
+    }
+    .cardshop{
+        width: 14rem;
+        height: 14rem;
+        border-radius: 3rem;
+       
+    }   
+    .item > img{
+        width: 10rem;
+        height: 10rem;
+        font-size: 20px;
+        background-color: rgb(222, 222, 222);
+        border-radius: 3rem;
+    }
+    .item{
+        font-size: 20px;
+    }
+
+
+
 }
 
 
 @media screen and (min-width: 1280px) {
+    nav{
+        height: 8rem;
+    }
+
+    .cardshop{
+        width: 10rem ;
+        height: 10rem;
+        background-color: rgb(195, 195, 195);
+        border-top-left-radius: 3rem;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding-top: 0.5rem;
+
+       
+    
+      
+    }
+
+    .logonav{
+        position: absolute;
+        z-index: 100;
+    }
+
+    #circulo{
+        right: 50px;
+        top: 20px;
+        z-index: 100;
+        position: relative;
+
+    }
+
+    .imagesproductos{
+        height: 14rem;
+        width: 14rem;
+    }
+
     .menu{
         display: none;
     }
@@ -582,27 +665,36 @@ margin-top: 2rem;
 
     header{
         position: relative;
+        display: flex ;
+        
        
     }
     .containerdescription{
-        position: relative;
-        right: 90px;
-        bottom: 400px;
+        position: absolute;
+        right: 250px;
+        bottom: 420px;
         font-size: 25px;
     
     }
     .descriptionproduct{
-        font-size: 45px;
+        font-size: 30px;
+        position: relative;
+        right: 490px;
+        top: 100px;
     }
 
     .descriptionproduct > p{
-        font-size: 28px;
-        width: 40rem;
+        font-size: 20px;
+        width: 20rem;
+        position: relative;
+        right: 0x;
+        
     }
     .discover-addtocard{
-        position: relative;
-        bottom: 350px;
-        left: 200px;
+      width: 40;
+      margin-right: 3rem;
+      position: relative;
+      right: 480px;
     }
 
     .menu-filtro{
@@ -617,21 +709,75 @@ margin-top: 2rem;
     #discover{
         height: 3rem;
         font-size: 23px;
-        width: 12rem;
+        width: 8rem;
         
     }
 
     #addToCart{
         height: 4rem;
         font-size: 23px;
-        width: 16rem;
+        width: 12rem;
     }
 
+    .price1{
+      width:22rem ;
+      position: relative;
+      right: 490px;
+      top: 150px;
+
+
+    }
+
+    .information{
+        display: flex;
+        gap: 3rem;
+        justify-content: space-evenly;  
+        
+    }
+    .information > h4{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .our{
+        padding-top: 3.1rem;
+    }
+    .activeshopping{
+        width: 25%;
+        position: absolute;
+        top: 0px;
+        background-color: rgba(255, 255, 255, 0.845);
+        height: 200rem;
+        
+    
+
+    }
+    .compras-list{
+        padding-top: 3rem;
+        display: flex;
+        width: 100%;
+        background-color: transparent;
+        bottom: -400px;
+
+      
+    }
+
+    .totals{
+            
+        width: 100%;
+    }
+    .item{
+        height: 7rem;
+        width: 7rem;
+    }
+
+
+
+   
+
+
 }
-
-
-
-
 
 
 

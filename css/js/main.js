@@ -42,7 +42,9 @@ let circulo = document.querySelector("#circulo")
 
 
 document.addEventListener("DOMContentLoaded",() =>{ 
+  cargue()
   visualizarProducto()
+  
   
   
 })
@@ -60,6 +62,10 @@ closer.addEventListener("click",() => {
 cart.addEventListener("click",()=>{
      containershop.classList.toggle('activeshopping')
   })
+
+  circulo.addEventListener("click",()=>{
+    containershop.classList.toggle('activeshopping')
+ })
     
 closeshop.addEventListener("click",()=>{
       containershop.classList.toggle('activeshopping')
@@ -169,15 +175,18 @@ function mostrarProductoscompras (){
   contenedorcompras.innerHTML = fragmentoHTML
   circulo.textContent=cantprod
   localStorage.setItem("productosl", JSON.stringify(compras));
-  cargue()
+
  
 }
 
 
 function cargue(){
-  if(compras == false){
+  if(localStorage.getItem("productosl")){
     compras = JSON.parse(localStorage.getItem("productosl"))
+  }else{
+    window.localStorage.setItem("productosl", JSON.stringify(compras));
   }
+  mostrarProductoscompras()
 }
 
 
